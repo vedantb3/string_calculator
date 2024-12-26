@@ -22,5 +22,13 @@ RSpec.describe StringCalculator do
         expect(calculator.add('1,5')).to eq(6)
       end
     end
+
+    context 'when input are large amount of numbers with comma separated' do
+      it 'returns the sum of all numbers' do
+        string = (1..1000).to_a.join(',')
+        result = (1..1000).sum
+        expect(calculator.add(string)).to eq(result)
+      end
+    end
   end
 end
