@@ -30,5 +30,11 @@ RSpec.describe StringCalculator do
         expect(calculator.add(string)).to eq(result)
       end
     end
+
+    context 'when input string has new lines between numbers' do
+      it 'returns the correct sum for numbers separated by new lines' do
+        expect(calculator.add("1\n2,3")).to eq(6)
+      end
+    end
   end
 end
